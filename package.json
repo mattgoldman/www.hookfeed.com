@@ -1,0 +1,22 @@
+{
+  "name": "hookfeed-website",
+  "description": "Website and Blog for HookFeed",
+  "author": "Matt Goldman <matt@smallhq.com>",
+  "subdomain": "hookfeed",
+  "domains": [
+    "hookfeed.com",
+    "www.hookfeed.com"
+  ],
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "winston": "0.6.x"
+  },
+  "scripts": {
+    "start": "server.js"
+  },
+  "engines": {
+    "node": "0.6.x"
+  }
+}

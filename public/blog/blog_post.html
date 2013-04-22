@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Post Title | Minimalytics - Recurring Email Reports with Minimal Metrics</title>
+
+  <!-- Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/jquery.typer.js"></script>
+  <script src="/scripts/form_validation.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- TypeKit -->
+  <script type="text/javascript" src="//use.typekit.net/rym1nld.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">
+    (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("c870325a78a44c4e27cbf320b87c95df");
+
+    mixpanel.track_forms("#subForm", "beta signup");
+  </script>
+
+  <!-- Google +1 Button -->
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+  <!-- end Mixpanel -->
+</head>
+<body id="blog">
+
+  <div class="container">
+
+    <header class="sixteen columns">
+      <h1 id="logo"><a href="/">Minimalytics</a></h1>
+
+      <div id="social">
+        <!-- TWITTER --><a href="https://twitter.com/share" class="twitter-share-button" data-text="TODO" data-via="TODO" data-related="TODO"></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><!-- BUFFER --><a href="http://bufferapp.com/add" class="buffer-add-button" data-text="TODO" data-count="horizontal" data-via="TODO" ></a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script><!-- GOOGLE PLUS --><div class="g-plusone" data-size="medium"></div><!-- LINKEDIN --><script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+      </div>
+    </header>
+
+    <article id="blog_post" class="sixteen columns">
+      <div class="twelve columns offset-by-two">
+        <h1>Stop Building. Start Marketing.</h1>
+        <img src="https://s3-us-west-2.amazonaws.com/minimalytics/blog_headers/header-sample.jpg" alt="" width="556" height="150" class="scale-with-grid">
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <h2>Commodo Ligula Etiam Fermentum Elit</h2>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+      </div>
+
+      <div class="fourteen columns offset-by-one">
+        <div class="highlight"><pre><code class="ruby"><span class="c1"># Say hi to everybody</span>
+<span class="k">def</span> <span class="nf">say_hi</span>
+  <span class="k">if</span> <span class="vi">@names</span><span class="o">.</span><span class="n">nil?</span>
+    <span class="nb">puts</span> <span class="s2">"..."</span>
+  <span class="k">elsif</span> <span class="vi">@names</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="s2">"each"</span><span class="p">)</span>
+    <span class="c1"># @names is a list of some kind, iterate!</span>
+    <span class="vi">@names</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+      <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!"</span>
+    <span class="k">end</span>
+  <span class="k">else</span>
+    <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="vi">@names</span><span class="si">}</span><span class="s2">!"</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+      </div>
+
+      <div class="twelve columns offset-by-two">
+        <h3>Commodo Ligula Etiam Fermentum Elit</h3>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <ol>
+            <li>Consectetur Mollis Adipiscing Nullam Ullamcorper</li>
+            <li>Consectetur Mollis Adipiscing Nullam Ullamcorper</li>
+            <li>Consectetur Mollis Adipiscing Nullam Ullamcorper</li>
+            <li>Consectetur Mollis Adipiscing Nullam Ullamcorper</li>
+            <li>Consectetur Mollis Adipiscing Nullam Ullamcorper</li>
+        </ol>
+
+        <h3>Commodo Ligula Etiam Fermentum Elit</h3>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <ul>
+            <li>Consectetur Nullam Adipiscing Mollis</li>
+            <li>Consectetur Adipiscing Mollis Ullamcorper</li>
+            <li>Consectetur Mollis Ullamcorper Adipiscing</li>
+            <li>Consectetur Nullam Adipiscing Ullamcorper</li>
+            <li>Mollis Adipiscing Nullam Ullamcorper</li>
+        </ul>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <h3>Commodo Ligula Etiam Fermentum Elit</h3>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+
+        <h3>Commodo Ligula Etiam Fermentum Elit</h3>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus.</p>
+      </div>
+    </article>
+
+    <div id="beta_signup_form" class="fourteen columns offset-by-one">
+      <form action="http://email.demandloyalty.com/t/r/s/jjpau/" method="post" id="subFormTwo">
+        <h1>Want in on the action? Sign up to be notified when our beta goes live.</h1>
+        <input type="text" name="cm-jjpau-jjpau" id="jjpau-jjpau" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
+      </form>
+    </div>
+
+    <footer class="sixteen columns">
+      <div class="two columns">&nbsp;</div>
+      <div class="twelve columns">
+        <p><a href="/">Minimalytics</a> is a product of <a href="http://www.smallhq.com">Small HQ</a>. Design by <a href="http://colemantharp.me">Coleman Tharp</a>.</p>
+      </div>
+      <div class="two columns">&nbsp;</div>
+    </footer>
+
+  </div><!-- .container -->
+
+  <script>
+    $(function () {
+      $social = $('#social', 'header');
+
+      setTimeout(function(){
+        $social.addClass('animated fadeInDown');
+      }, 1000);
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36985175-1']);
+    _gaq.push(['_setDomainName', 'minimalytics.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- END Google Analytics -->
+</body>
+</html>
