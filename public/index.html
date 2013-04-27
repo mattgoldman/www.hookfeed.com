@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Minimalytics - Recurring Email Reports with Minimal Metrics</title>
+  <title>HookFeed - A Streaming News Feed for Your Company</title>
 
 	<!-- Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,54 +15,76 @@
 	<link rel="stylesheet" href="/styles/styles.css">
 
 	<script src="/scripts/jquery.js"></script>
-	<script src="/scripts/jquery.typer.js"></script>
+	<script src="/scripts/jquery-easing.js"></script>
   <script src="/scripts/form_validation.js"></script>
+  <script src="/scripts/notifications.js"></script>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<!-- TypeKit -->
-	<script type="text/javascript" src="//use.typekit.net/rym1nld.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="//use.typekit.net/qee5bpm.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	<!-- start Mixpanel -->
-	<script type="text/javascript">
-		(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
-typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
-b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("c870325a78a44c4e27cbf320b87c95df");
+  <!-- Mixpanel -->
+  <script type="text/javascript">
+    (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("29a3639e243eea6cdeb20dd316b7698b");
 
-		mixpanel.track_forms("#subForm", "beta signup");
+    mixpanel.track_forms("#subForm", "beta signup");
 		mixpanel.track_forms("#subFormTwo", "beta signup");
-	</script>
-
-	<!-- end Mixpanel -->
+  </script>
 </head>
 <body id="home">
 
 	<div class="container">
 
 		<header class="sixteen columns">
-			<h1 id="logo">Minimalytics</h1>
+			<h1 id="logo">HookFeed</h1>
 		</header>
 
-		<h2 id="description">
-			"Send
-				<span id="recipients" data-typer-targets="me, Coleman, Drew, Michelle, Nancy, Jerry and Matt, Joelle, Harry, Rita, Amy, Bryan, Brittany, Hannah and Ryan, Gary, Roxanne and Sarah, Pedro, Debbie, Wade, Jessica, Andy and Fred, Laura, Ben, Irwin, Kim, Jason and Christian">me</span>
-			analytics from
-				<span id="apps" data-typer-targets="Google Analytics and Stripe, Mixpanel and Customer.io, KISSmetrics and Qualaroo, Shopify and PayPal, FreshBooks and Stripe, Quickbooks, Facebook and Twitter, LayerVault and Dribbble, Google+, GitHub, Sifter, Stripe, Google AdWords, HookFeed, App.net, Heroku, Nodejitsu, Basecamp, Campfire, Dropbox, GitHub and Campfire, Freckle and Freshbooks, Harvest, Ballpark and Braintree, Flow, PayPal, Campaign Monitor, MailChimp, Braintree, Bidsketch, Chargify, ZenChat, Wufoo, Highrise, Salesforce, Recurly, Sprintly, ConstantContact, Asana, CodeClimate, CodeShip, HipChat, PivotalTracker, Tender, Trajectory, Trello, Twilio">Google Analytics and Stripe</span>
-			<br>every
-				<span id="frequency" data-typer-targets="week, 3 days, other week, Tuesday at 8am, Thursday and Sunday, quarter, 6 months, month, 3 months, Thursday afternoon, Sunday night, Monday morning, Wednesday night">week</span>."</h2>
+		<div id="notifications_container" class="sixteen columns">
+			<nav>
+				<a href="#" class="selected">Startups</a>
+				<a href="#">Design Teams</a>
+				<a href="#">Dev Teams</a>
+				<a href="#">Marketing Teams</a>
+				<a href="#">Freelancers</a>
+			</nav>
 
-			<form action="http://email.demandloyalty.com/t/r/s/jjpau/" method="post" id="subForm">
-				<input type="text" name="cm-jjpau-jjpau" id="jjpau-jjpau" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
+			<div id="notifications">
+				<div class="notification" style="top: 0px;">
+					<div class="icon aws"></div>
+					<div class="source">AWS<span class="timestamp">26 seconds ago</span></div>
+
+					<div class="text">Service outage in US East</div>
+				</div>
+
+				<div class="notification" style="top: 108px;">
+					<div class="icon bitbucket"></div>
+					<div class="source">Bitbucket<span class="timestamp">1 minute ago</span></div>
+
+					<div class="text"><a href="">Matt Goldman</a> followed you</div>
+				</div>
+
+				<div class="notification" style="top: 216px;">
+					<div class="icon dribbble"></div>
+					<div class="source">Dribbble<span class="timestamp">2 minutes ago</span></div>
+
+					<div class="text"><a href="">Matt Goldman</a> followed you</div>
+				</div>
+			</div>
+		</div>
+
+			<form action="http://email.demandloyalty.com/t/r/s/jdwdyi/" method="post" id="subForm" class="sixteen columns">
+				<input type="text" name="cm-jdwdyi-jdwdyi" id="jdwdyi-jdwdyi" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
 			</form>
 
 			<div class="sixteen columns benefit" id="benefits">
 				<div class="two columns">&nbsp;</div>
 				<div class="twelve columns">
-					<h2>Digestible Analytics &mdash; Handpicked by You.</h2>
-					<p>Get <i>only the metrics</i> from each app that <i>matter to you</i>. Want only your Likes from Dribbble and your Visits from Google Analytics? Easy.</p>
+					<h2>Your Notifications &mdash; From Any Source.</h2>
+					<p>Through our integration with <a href="http://zapier.com">Zapier</a>, you're able to receive notifications from  nearly 200 web services. Plus, we've got a killer REST API &mdash; so you can integrate your own awesome stuff.</p>
 				</div>
 				<div class="two columns">&nbsp;</div>
 			</div>
@@ -70,8 +92,8 @@ b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("c
 			<div class="sixteen columns benefit">
 				<div class="two columns">&nbsp;</div>
 				<div class="twelve columns">
-					<h2>Passive Monitoring</h2>
-					<p>One simple report &mdash; automatically delivered to your inbox, only when you want it.</p>
+					<h2>A Feed for You. A Feed for Them.</h2>
+					<p>You don't care about Sue's accounting notifications. And she doesn't care about your downtime notifications from Heroku. So we've built HookFeed to show only the notifications to which you subscribe &mdash; and nothing more.</p>
 				</div>
 				<div class="two columns">&nbsp;</div>
 			</div>
@@ -79,17 +101,8 @@ b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("c
 			<div class="sixteen columns benefit">
 				<div class="two columns">&nbsp;</div>
 				<div class="twelve columns">
-					<h2>Set-it-and-forget-it.</h2>
-					<p>Because you have more important things to do than log into a bunch of apps to pull out the handful of metrics <i>you actually care about</i>. </p>
-				</div>
-				<div class="two columns">&nbsp;</div>
-			</div>
-
-			<div class="sixteen columns benefit">
-				<div class="two columns">&nbsp;</div>
-				<div class="twelve columns">
-					<h2>Your Branding &mdash; Your Commentary.</h2>
-					<p>Impress your clients with simple, branded reports. No more Excel. No more PowerPoint. You can even add commentary to the emails before your clients see them. <i>Your mind will be blown &mdash; and your clients will be happy!</i></p>
+					<h2>Digestion.</h2>
+					<p>Sometimes, it can be challenging to digest every digital bit thrown your way &mdash; so we've built in daily and weekly digests to lighten the load...and help you digest what's going on with your team.</p>
 				</div>
 				<div class="two columns">&nbsp;</div>
 			</div>
@@ -97,19 +110,14 @@ b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("c
 			<div class="sixteen columns benefit" id="last_benefit">
 				<div class="two columns">&nbsp;</div>
 				<div class="twelve columns">
-					<h2>What else?</h2>
-					<ul>
-						<li>No code necessary. Relax.</li>
-						<li>Drag-and-drop interface.</li>
-						<li>Custom, flexible scheduling.</li>
-						<li>Want to integrate your own app? <a href="mailto:matt@smallhq.com">Email me.</a></li>
-					</ul>
+					<h2>Alerts &mdash; for the Important Stuff.</h2>
+					<p>Shit! The website is down and traffic is spiking. Someone should let Milton in ServerOps know about this! What's that? HookFeed already did? SMS and Email alerts, delivered instantly to you, when important things happen.</p>
 				</div>
 				<div class="two columns">&nbsp;</div>
 			</div>
 
-			<form action="http://email.demandloyalty.com/t/r/s/jjpau/" method="post" id="subFormTwo">
-				<input type="text" name="cm-jjpau-jjpau" id="jjpau-jjpau" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
+			<form action="http://email.demandloyalty.com/t/r/s/jdwdyi/" method="post" id="subFormTwo" class="sixteen columns">
+				<input type="text" name="cm-jdwdyi-jdwdyi" id="jdwdyi-jdwdyi" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
 			</form>
 
 			<footer class="sixteen columns">
@@ -122,42 +130,173 @@ b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("c
 
 	</div><!-- .container -->
 
-	<script>
-		$(function () {
-			$description = $('h2#description');
 
-			$.typer.options.highlightSpeed = 30;
-			$.typer.options.typerInterval = 6500;
 
-		  setTimeout(function(){
-		  	$('span#apps', $description).typer();
-		  }, 2000);
 
-		  setTimeout(function(){
-		  	$('span#recipients', $description).typer();
-		  }, 7000);
 
-		  setTimeout(function(){
-		  	$('span#frequency', $description).typer();
-		  }, 11000);
 
-		  $('h2#description').addClass('animated fadeInDown');
-		});
-	</script>
 
-	<!-- Google Analytics -->
-	<script type="text/javascript">
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-36985175-1']);
-	  _gaq.push(['_setDomainName', 'minimalytics.com']);
-	  _gaq.push(['_trackPageview']);
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	</script>
-	<!-- END Google Analytics -->
+
+
+	<div class="queued_notification">
+		<div class="icon disqus"></div>
+		<div class="source">Disqus<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon dropbox"></div>
+		<div class="source">Dropbox<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon evernote"></div>
+		<div class="source">Evernote<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon facebook"></div>
+		<div class="source">Facebook<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon flattr"></div>
+		<div class="source">Flattr<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon github"></div>
+		<div class="source">GitHub<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon heroku"></div>
+		<div class="source">Heroku<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon kickstarter"></div>
+		<div class="source">KickStarter<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon klout"></div>
+		<div class="source">Klout<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon layervault"></div>
+		<div class="source">LayerVault<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon linkedin"></div>
+		<div class="source">LinkedIn<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon quora"></div>
+		<div class="source">Quora<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon skype"></div>
+		<div class="source">Skype<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon slideshare"></div>
+		<div class="source">SlideShare<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon spotify"></div>
+		<div class="source">Spotify<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon stackexchange"></div>
+		<div class="source">StackExchange<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon twitter"></div>
+		<div class="source">Twitter<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon vimeo"></div>
+		<div class="source">Vimeo<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+	<div class="queued_notification">
+		<div class="icon youtube"></div>
+		<div class="source">YouTube<span class="timestamp">just now</span></div>
+
+		<div class="text"><a href="">Matt Goldman</a> followed you</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40298732-1', 'hookfeed.com');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>

@@ -3,29 +3,164 @@
 @import 'pygments';
 @import 'animation';
 
-// Universal
-#logo, #logo a {
-	color: #DF5353;
-	font-family: 'freight-sans-pro', HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 25px;
+// For future app implementation
+#notifications_container {
+	nav {
+		margin: 0 auto 30px;
+		width: 508px;
+		text-align: center;
+
+		a {
+			font-family: HelveticaNeue, "Helvetica Neue", Arial, sans-serif;
+			font-size: 13px;
+			background-color: #babfc7;
+			color: #fff;
+			margin-right: 7px;
+			padding: 3px 8px;
+			border-radius: 2px;
+
+			&:hover, &.selected {
+				background-color: #5799d6;
+			}
+		}
+	}
+
+	#notifications {
+		height: 300px;
+		position: relative;
+		overflow: hidden;
+		margin: 0 auto;
+		width: 508px;
+
+		div.notification {
+			background-color: #fff; /* TODO */
+			border-radius: 4px;
+			font-family: HelveticaNeue, "Helvetica Neue", Arial, sans-serif;
+			padding: 22px 80px 20px 76px;
+			position: absolute;
+			width: 352px;
+
+			div.icon {
+				height: 40px;
+				width: 40px;
+				position: absolute;
+				top: 22px;
+				left: 23px;
+				border-radius: 4px;
+
+				&.aws {
+					background: #FF9900 url('/images/icons/aws-32.png') 4px 4px no-repeat;
+				}
+				&.bitbucket {
+					background: #205081 url('/images/icons/bitbucket-32.png') 4px 4px no-repeat;
+				}
+				&.disqus {
+					background: #2E9FFF url('/images/icons/disqus-32.png') 4px 4px no-repeat;
+				}
+				&.dribbble {
+					background: #EA4C89 url('/images/icons/dribbble-32.png') 4px 4px no-repeat;
+				}
+				&.dropbox {
+					background: #2281CF url('/images/icons/dropbox-32.png') 4px 4px no-repeat;
+				}
+				&.evernote {
+					background: #7AC142 url('/images/icons/evernote-32.png') 4px 4px no-repeat;
+				}
+				&.facebook {
+					background: #3B5998 url('/images/icons/facebook-32.png') 4px 4px no-repeat;
+				}
+				&.flattr {
+					background: #F67C1A url('/images/icons/flattr-32.png') 4px 4px no-repeat;
+				}
+				&.github {
+					background: #4183C4 url('/images/icons/github-32.png') 4px 4px no-repeat;
+				}
+				&.heroku {
+					background: #6762A6 url('/images/icons/heroku-32.png') 4px 4px no-repeat;
+				}
+				&.kickstarter {
+					background: #87C442 url('/images/icons/kickstarter-32.png') 4px 4px no-repeat;
+				}
+				&.klout {
+					background: #E24A25 url('/images/icons/klout-32.png') 4px 4px no-repeat;
+				}
+				&.layervault {
+					background: #26AE90 url('/images/icons/layervault-32.png') 4px 4px no-repeat;
+				}
+				&.linkedin {
+					background: #007FB1 url('/images/icons/linkedin-32.png') 4px 4px no-repeat;
+				}
+				&.quora {
+					background: #A82400 url('/images/icons/quora-32.png') 4px 4px no-repeat;
+				}
+				&.skype {
+					background: #00AFF0 url('/images/icons/skype-32.png') 4px 4px no-repeat;
+				}
+				&.slideshare {
+					background: #009999 url('/images/icons/slideshare-32.png') 4px 4px no-repeat;
+				}
+				&.spotify {
+					background: #80B719 url('/images/icons/spotify-32.png') 4px 4px no-repeat;
+				}
+				&.stackexchange {
+					background: #1F5196 url('/images/icons/stackexchange-32.png') 4px 4px no-repeat;
+				}
+				&.twitter {
+					background: #39A9E0 url('/images/icons/twitter-32.png') 4px 4px no-repeat;
+				}
+				&.vimeo {
+					background: #44BBFF url('/images/icons/vimeo-32.png') 4px 4px no-repeat;
+				}
+				&.youtube {
+					background: #CD332D url('/images/icons/youtube-32.png') 4px 4px no-repeat;
+				}
+			}
+
+			div.source {
+				color: #32353a;
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: 4px;
+
+				span.timestamp {
+					font-size: 12px;
+					font-weight: normal;
+					color: #b1b5bd;
+					padding-left: 12px;
+				}
+			}
+
+			div.text {
+				color: #6c7079;
+				font-size: 14px;
+				line-height: 22px;
+
+				a {
+					color: #5799d6;
+					font-style: italic;
+				}
+			}
+		}
+	}
 }
 
+// Universal
 footer {
 	color: #656771;
 	font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	line-weight: 20px;
+	line-height: 20px;
 }
 
 // Links
 a {
-	color: #6281FA;
+	color: #5799d6;
 	text-decoration: none;
 }
 
 // Forms
 form {
-	margin: 60px 0 150px;
+	margin: 30px 0 30px;
 	text-align: center;
 
 	input {
@@ -42,7 +177,7 @@ form {
 	}
 
 	&#subFormTwo {
-		margin-bottom: 100px;
+		margin: 50px 0 80px;
 	}
 
 	@media only screen and (max-width: 767px) {
@@ -51,51 +186,68 @@ form {
 }
 
 input {
+	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none; /* Fix iOS styling */
 }
 
+/* Placeholder styling */
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #a3a7ac;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #a3a7ac;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #a3a7ac;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #a3a7ac;
+}
+
 input[type="text"] {
-	border: 2px solid #D3D9DD;
+	background-color: #e8eaed;
+	border: 2px solid #c3c8cc;
 	border-radius: 4px;
-	color: #8C8E94;
 	font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 15px;
 	outline: none;
-	padding: 8px 10px;
+	padding: 13px 16px;
 
 	&:focus {
-		border-color: #C3C8CB;
+		border-color: #a3a6aa;
 		border-radius: 4px;
-		color: #797B80;
+		color: #61666b;
 	}
 
 	&.invalid {
-		border-color: #DFA3A3;
-		color: #C77070;
+		border-color: #e96565;
+		color: #e96565;
 	}
 
 	&.valid {
-		border-color: #6FBCA2;
-		color: #6FA492;
+		border-color: #54bd9c;
+		color: #51ae91;
 	}
 }
 
 input[type="submit"], input[type="button"] {
 	color: #FFF;
 	cursor: pointer;
-	background-color: #2FB499;
+	background-color: #54bd9c;
 	border: 0px;
 	border-radius: 4px;
-	font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-family: 'proxima-nova', HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
 	font-weight: bold;
 	height: 37px;
 	outline: none;
-	padding: 0px 20px;
+	padding: 7px 12px;
 	-webkit-font-smoothing: antialiased;
+	vertical-align: top;
+	margin-top: 7px;
 
 	&:active {
-		background-color: #279F87;
+		background-color: #51ae91;
 	}
 }
 
@@ -103,46 +255,35 @@ input[type="submit"], input[type="button"] {
 
 
 // Home Page
+.queued_notification {
+	display: none;
+}
+
 body#home {
+	background-color: #e8eaed;
+
 	header {
 		text-align: center;
 
 		#logo {
-			margin: 100px 0 40px;
+			margin: 40px 0 60px;
 		}
-	}
-
-	h2#description {
-		color: #35363B;
-		font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 22px;
-		font-weight: normal;
-		line-height: 32px;
-		opacity: 0;
-		text-align: center;
-	}
-
-	span#recipients,
-	span#apps,
-	span#frequency {
-		border-bottom: 1px dashed #C6D1D9;
-		font-weight: bold;
 	}
 
 	.benefit {
 		h2 {
-			color: #35363B;
-			font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 22px;
+			color: #3c4146;
+			font-family: 'proxima-nova', HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 20px;
 			font-weight: bold;
-			line-height: 32px;
+			line-height: 30px;
 			margin-top: 50px;
 		}
 
 		p, ul {
-			color: #656771;
+			color: #6c7079;
 			font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-size: 19px;
+			font-size: 16px;
 			font-weight: normal;
 			line-height: 32px;
 			margin-top: 4px;
@@ -154,10 +295,6 @@ body#home {
 			li {
 				margin-left: 20px;
 			}
-		}
-
-		&#last_benefit {
-			margin-bottom: 80px;
 		}
 	}
 }
