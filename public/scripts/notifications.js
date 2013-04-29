@@ -59,7 +59,7 @@ $(document).ready(function(){
 	$('.notification').on('click', 'a', notificationLinkClicked);
 
 	nextNotification = function(){
-		if(currentUseCase == 'startups'){
+		/*if(currentUseCase == 'startups'){
 			$queued_notifications = $queued_startup_notifications;
 		}else if(currentUseCase == 'developers'){
 			$queued_notifications = $queued_developer_notifications;
@@ -67,7 +67,9 @@ $(document).ready(function(){
 			$queued_notifications = $queued_marketer_notifications;
 		}else if(currentUseCase == 'freelancers'){
 			$queued_notifications = $queued_freelancer_notifications;
-		}
+		}*/
+		$queued_notifications = $('.queued_notification');
+
 		html = "<div class=\"notification\" style=\"opacity: 0\">";
 		html += $($queued_notifications[Math.floor(Math.random()*$queued_notifications.length)]).first().html();
 		html += "</div>";
