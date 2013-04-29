@@ -3,28 +3,44 @@
 @import 'pygments';
 @import 'animation';
 
-// For future app implementation
-#notifications_container {
+#navigation {
 	nav {
 		margin: 0 auto 30px;
-		width: 508px;
 		text-align: center;
+		font-family: 'proxima-nova', HelveticaNeue, "Helvetica Neue", Arial, sans-serif;
+		font-size: 13px;
+		font-weight:  bold;
+		border: 1px dashed #c3c8cc;
+		padding: 18px 6px 17px 13px;
+		width: 441px;
+		border-radius: 4px;
+
+		span {
+			color: #babfc7;
+			margin-right: 8px;
+		}
 
 		a {
-			font-family: HelveticaNeue, "Helvetica Neue", Arial, sans-serif;
-			font-size: 13px;
-			background-color: #babfc7;
-			color: #fff;
+			background-color: #fff;
+			color: #babfc7;
 			margin-right: 7px;
 			padding: 3px 8px;
-			border-radius: 2px;
+			border-radius: 4px;
+			-moz-transition: background-color .2s, color .2s;
+	    -webkit-transition: background-color .2s, color .2s;
+	    -o-transition: background-color .2s, color .2s;
+	    transition: background-color .2s, color .2s;
 
 			&:hover, &.selected {
 				background-color: #5799d6;
+				color: #fff;
 			}
 		}
 	}
+}
 
+// For future app implementation
+#notifications_container {
 	#notifications {
 		height: 300px;
 		position: relative;
@@ -47,72 +63,166 @@
 				top: 22px;
 				left: 23px;
 				border-radius: 4px;
+				background-size: 32px 32px;
+				background-position: 4px 4px;
+				background-repeat: no-repeat;
 
 				&.aws {
-					background: #FF9900 url('/images/icons/aws-32.png') 4px 4px no-repeat;
+					background-color: #FF9900;
+					background-image: url('/images/icons/aws-32.png');
 				}
 				&.bitbucket {
-					background: #205081 url('/images/icons/bitbucket-32.png') 4px 4px no-repeat;
+					background-color: #205081;
+					background-image: url('/images/icons/bitbucket-32.png');
 				}
 				&.disqus {
-					background: #2E9FFF url('/images/icons/disqus-32.png') 4px 4px no-repeat;
+					background-color: #2E9FFF;
+					background-image: url('/images/icons/disqus-32.png');
 				}
 				&.dribbble {
-					background: #EA4C89 url('/images/icons/dribbble-32.png') 4px 4px no-repeat;
+					background-color: #EA4C89;
+					background-image: url('/images/icons/dribbble-32.png');
 				}
 				&.dropbox {
-					background: #2281CF url('/images/icons/dropbox-32.png') 4px 4px no-repeat;
+					background-color: #2281CF;
+					background-image: url('/images/icons/dropbox-32.png');
 				}
 				&.evernote {
-					background: #7AC142 url('/images/icons/evernote-32.png') 4px 4px no-repeat;
+					background-color: #7AC142;
+					background-image: url('/images/icons/evernote-32.png');
 				}
 				&.facebook {
-					background: #3B5998 url('/images/icons/facebook-32.png') 4px 4px no-repeat;
+					background-color: #3B5998;
+					background-image: url('/images/icons/facebook-32.png');
 				}
 				&.flattr {
-					background: #F67C1A url('/images/icons/flattr-32.png') 4px 4px no-repeat;
+					background-color: #F67C1A;
+					background-image: url('/images/icons/flattr-32.png');
 				}
 				&.github {
-					background: #4183C4 url('/images/icons/github-32.png') 4px 4px no-repeat;
+					background-color: #4183C4;
+					background-image: url('/images/icons/github-32.png');
 				}
 				&.heroku {
-					background: #6762A6 url('/images/icons/heroku-32.png') 4px 4px no-repeat;
+					background-color: #6762A6;
+					background-image: url('/images/icons/heroku-32.png');
 				}
 				&.kickstarter {
-					background: #87C442 url('/images/icons/kickstarter-32.png') 4px 4px no-repeat;
+					background-color: #87C442;
+					background-image: url('/images/icons/kickstarter-32.png');
 				}
 				&.klout {
-					background: #E24A25 url('/images/icons/klout-32.png') 4px 4px no-repeat;
+					background-color: #E24A25;
+					background-image: url('/images/icons/klout-32.png');
 				}
 				&.layervault {
-					background: #26AE90 url('/images/icons/layervault-32.png') 4px 4px no-repeat;
+					background-color: #26AE90;
+					background-image: url('/images/icons/layervault-32.png');
 				}
 				&.linkedin {
-					background: #007FB1 url('/images/icons/linkedin-32.png') 4px 4px no-repeat;
+					background-color: #007FB1;
+					background-image: url('/images/icons/linkedin-32.png');
 				}
 				&.quora {
-					background: #A82400 url('/images/icons/quora-32.png') 4px 4px no-repeat;
+					background-color: #A82400;
+					background-image: url('/images/icons/quora-32.png');
 				}
 				&.skype {
-					background: #00AFF0 url('/images/icons/skype-32.png') 4px 4px no-repeat;
+					background-color: #00AFF0;
+					background-image: url('/images/icons/skype-32.png');
 				}
 				&.slideshare {
-					background: #009999 url('/images/icons/slideshare-32.png') 4px 4px no-repeat;
+					background-color: #009999;
+					background-image: url('/images/icons/slideshare-32.png');
 				}
 				&.spotify {
-					background: #80B719 url('/images/icons/spotify-32.png') 4px 4px no-repeat;
+					background-color: #80B719;
+					background-image: url('/images/icons/spotify-32.png');
 				}
 				&.stackexchange {
-					background: #1F5196 url('/images/icons/stackexchange-32.png') 4px 4px no-repeat;
+					background-color: #1F5196;
+					background-image: url('/images/icons/stackexchange-32.png');
 				}
 				&.twitter {
-					background: #39A9E0 url('/images/icons/twitter-32.png') 4px 4px no-repeat;
+					background-color: #39A9E0;
+					background-image: url('/images/icons/twitter-32.png');
 				}
 				&.vimeo {
-					background: #44BBFF url('/images/icons/vimeo-32.png') 4px 4px no-repeat;
+					background-color: #44BBFF;
+					background-image: url('/images/icons/vimeo-32.png');
 				}
 				&.youtube {
-					background: #CD332D url('/images/icons/youtube-32.png') 4px 4px no-repeat;
+					background-color: #CD332D;
+					background-image: url('/images/icons/youtube-32.png');
+				}
+
+				@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+					&.aws {
+						background-image: url('/images/icons/aws-64.png');
+					}
+					&.bitbucket {
+						background-image: url('/images/icons/bitbucket-64.png');
+					}
+					&.disqus {
+						background-image: url('/images/icons/disqus-64.png');
+					}
+					&.dribbble {
+						background-image: url('/images/icons/dribbble-64.png');
+					}
+					&.dropbox {
+						background-image: url('/images/icons/dropbox-64.png');
+					}
+					&.evernote {
+						background-image: url('/images/icons/evernote-64.png');
+					}
+					&.facebook {
+						background-image: url('/images/icons/facebook-64.png');
+					}
+					&.flattr {
+						background-image: url('/images/icons/flattr-64.png');
+					}
+					&.github {
+						background-image: url('/images/icons/github-64.png');
+					}
+					&.heroku {
+						background-image: url('/images/icons/heroku-64.png');
+					}
+					&.kickstarter {
+						background-image: url('/images/icons/kickstarter-64.png');
+					}
+					&.klout {
+						background-image: url('/images/icons/klout-64.png');
+					}
+					&.layervault {
+						background-image: url('/images/icons/layervault-64.png');
+					}
+					&.linkedin {
+						background-image: url('/images/icons/linkedin-64.png');
+					}
+					&.quora {
+						background-image: url('/images/icons/quora-64.png');
+					}
+					&.skype {
+						background-image: url('/images/icons/skype-64.png');
+					}
+					&.slideshare {
+						background-image: url('/images/icons/slideshare-64.png');
+					}
+					&.spotify {
+						background-image: url('/images/icons/spotify-64.png');
+					}
+					&.stackexchange {
+						background-image: url('/images/icons/stackexchange-64.png');
+					}
+					&.twitter {
+						background-image: url('/images/icons/twitter-64.png');
+					}
+					&.vimeo {
+						background-image: url('/images/icons/vimeo-64.png');
+					}
+					&.youtube {
+						background-image: url('/images/icons/youtube-64.png');
+					}
 				}
 			}
 
@@ -266,18 +376,19 @@ body#home {
 		text-align: center;
 
 		#logo {
-			margin: 40px 0 60px;
+			margin: 40px 0;
 		}
 	}
 
 	.benefit {
+		margin-top: 100px;
+
 		h2 {
 			color: #3c4146;
 			font-family: 'proxima-nova', HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 20px;
 			font-weight: bold;
 			line-height: 30px;
-			margin-top: 50px;
 		}
 
 		p, ul {

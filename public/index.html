@@ -9,7 +9,7 @@
 
 	<!-- Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="">
+	<meta name="description" content="HookFeed brings all of your notifications into one simple stream. Notifications and team sharing make it even more awesome.">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="/styles/styles.css">
@@ -27,31 +27,43 @@
   <script type="text/javascript" src="//use.typekit.net/qee5bpm.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <!-- Mixpanel -->
+  <!-- Segment.io -->
   <script type="text/javascript">
-    (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("29a3639e243eea6cdeb20dd316b7698b");
+	  var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
+	  analytics.load("pk12xajikt");
 
-    mixpanel.track_forms("#subForm", "beta signup");
-		mixpanel.track_forms("#subFormTwo", "beta signup");
-  </script>
+	  $(document).ready(function(){
+		  var topForm = $('#subForm');
+		  var bottomForm = $('#subFormTwo');
+
+			analytics.trackForm(topForm, 'Requested Beta Access', {
+				betaFormLocation: 'top'
+			});
+			analytics.trackForm(bottomForm, 'Requested Beta Access', {
+				betaFormLocation: 'bottom'
+			});
+	  });
+	</script>
 </head>
 <body id="home">
 
 	<div class="container">
 
 		<header class="sixteen columns">
-			<h1 id="logo">HookFeed</h1>
+			<h1 id="logo"><img src="/images/logo@2x.png" alt="HookFeed" width="107" height="24"></h1>
 		</header>
 
-		<div id="notifications_container" class="sixteen columns">
+		<div id="navigation" class="sixteen columns">
 			<nav>
+				<span>Use Cases:</span>
 				<a href="#" class="selected">Startups</a>
-				<a href="#">Design Teams</a>
-				<a href="#">Dev Teams</a>
-				<a href="#">Marketing Teams</a>
+				<a href="#">Developers</a>
+				<a href="#">Marketers</a>
 				<a href="#">Freelancers</a>
 			</nav>
+		</div>
 
+		<div id="notifications_container" class="row">
 			<div id="notifications">
 				<div class="notification" style="top: 0px;">
 					<div class="icon aws"></div>
@@ -76,56 +88,62 @@
 			</div>
 		</div>
 
+		<div class="row">
 			<form action="http://email.demandloyalty.com/t/r/s/jdwdyi/" method="post" id="subForm" class="sixteen columns">
 				<input type="text" name="cm-jdwdyi-jdwdyi" id="jdwdyi-jdwdyi" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
 			</form>
+		</div>
 
-			<div class="sixteen columns benefit" id="benefits">
-				<div class="two columns">&nbsp;</div>
-				<div class="twelve columns">
+			<div class="row benefit" id="benefits">
+				<div class="seven columns">
+					<img src="/images/01_Graphic_Icons@2x.gif" width="316" height="200">
+				</div>
+				<div class="nine columns">
 					<h2>Your Notifications &mdash; From Any Source.</h2>
 					<p>Through our integration with <a href="http://zapier.com">Zapier</a>, you're able to receive notifications from  nearly 200 web services. Plus, we've got a killer REST API &mdash; so you can integrate your own awesome stuff.</p>
 				</div>
-				<div class="two columns">&nbsp;</div>
 			</div>
 
-			<div class="sixteen columns benefit">
-				<div class="two columns">&nbsp;</div>
-				<div class="twelve columns">
+			<div class="row benefit">
+				<div class="nine columns">
 					<h2>A Feed for You. A Feed for Them.</h2>
 					<p>You don't care about Sue's accounting notifications. And she doesn't care about your downtime notifications from Heroku. So we've built HookFeed to show only the notifications to which you subscribe &mdash; and nothing more.</p>
 				</div>
-				<div class="two columns">&nbsp;</div>
+				<div class="seven columns">
+					<img src="/images/02_Graphic_Multi-Feed@2x.gif" width="316" height="200">
+				</div>
 			</div>
 
-			<div class="sixteen columns benefit">
-				<div class="two columns">&nbsp;</div>
-				<div class="twelve columns">
+			<div class="row benefit">
+				<div class="seven columns">
+					<img src="/images/03_Graphic_Digest@2x.gif" width="316" height="200">
+				</div>
+				<div class="nine columns">
 					<h2>Digestion.</h2>
 					<p>Sometimes, it can be challenging to digest every digital bit thrown your way &mdash; so we've built in daily and weekly digests to lighten the load...and help you digest what's going on with your team.</p>
 				</div>
-				<div class="two columns">&nbsp;</div>
 			</div>
 
-			<div class="sixteen columns benefit" id="last_benefit">
-				<div class="two columns">&nbsp;</div>
-				<div class="twelve columns">
+			<div class="row benefit" id="last_benefit">
+				<div class="nine columns">
 					<h2>Alerts &mdash; for the Important Stuff.</h2>
 					<p>Shit! The website is down and traffic is spiking. Someone should let Milton in ServerOps know about this! What's that? HookFeed already did? SMS and Email alerts, delivered instantly to you, when important things happen.</p>
 				</div>
-				<div class="two columns">&nbsp;</div>
+				<div class="seven columns">
+					<img src="/images/04_Graphic_Alert@2x.gif" width="316" height="200">
+				</div>
 			</div>
 
+		<div class="row">
 			<form action="http://email.demandloyalty.com/t/r/s/jdwdyi/" method="post" id="subFormTwo" class="sixteen columns">
 				<input type="text" name="cm-jdwdyi-jdwdyi" id="jdwdyi-jdwdyi" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
 			</form>
+		</div>
 
-			<footer class="sixteen columns">
-				<div class="two columns">&nbsp;</div>
-				<div class="twelve columns">
+			<footer class="row">
+				<div class="twelve columns offset-by-two">
 					<p>Built by <a href="http://www.smallhq.com">Small HQ</a>. Design by <a href="http://colemantharp.me">Coleman Tharp</a>.</p>
 				</div>
-				<div class="two columns">&nbsp;</div>
 			</footer>
 
 	</div><!-- .container -->
@@ -139,164 +157,137 @@
 
 
 
-	<div class="queued_notification">
+	<div class="queued_notification marketers">
 		<div class="icon disqus"></div>
 		<div class="source">Disqus<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon dropbox"></div>
 		<div class="source">Dropbox<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon evernote"></div>
 		<div class="source">Evernote<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon facebook"></div>
 		<div class="source">Facebook<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon flattr"></div>
 		<div class="source">Flattr<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification developers startups">
 		<div class="icon github"></div>
 		<div class="source">GitHub<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification developers">
 		<div class="icon heroku"></div>
 		<div class="source">Heroku<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon kickstarter"></div>
 		<div class="source">KickStarter<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification startups">
 		<div class="icon klout"></div>
 		<div class="source">Klout<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon layervault"></div>
 		<div class="source">LayerVault<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon linkedin"></div>
 		<div class="source">LinkedIn<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon quora"></div>
 		<div class="source">Quora<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon skype"></div>
 		<div class="source">Skype<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification marketers">
 		<div class="icon slideshare"></div>
 		<div class="source">SlideShare<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification freelancers">
 		<div class="icon spotify"></div>
 		<div class="source">Spotify<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification developers">
 		<div class="icon stackexchange"></div>
 		<div class="source">StackExchange<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification startups freelancers marketers">
 		<div class="icon twitter"></div>
 		<div class="source">Twitter<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification marketers freelancers">
 		<div class="icon vimeo"></div>
 		<div class="source">Vimeo<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
 
-	<div class="queued_notification">
+	<div class="queued_notification marketers">
 		<div class="icon youtube"></div>
 		<div class="source">YouTube<span class="timestamp">just now</span></div>
 
 		<div class="text"><a href="">Matt Goldman</a> followed you</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Google Analytics -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-40298732-1', 'hookfeed.com');
-    ga('send', 'pageview');
-  </script>
 </body>
 </html>
