@@ -3,6 +3,50 @@
 @import 'pygments';
 @import 'animation';
 
+// Mobile-Friendly stuff
+h2#tagline {
+	display: none;
+	font-family: 'proxima-nova';
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 40px;
+	text-align: center;
+	color: #3c4146;
+
+	@media only screen and (max-width: 767px) {
+		display: block;
+	}
+
+	@media only screen and (max-width: 479px) {
+		font-size: 30px;
+		line-height: 34px;
+	}
+}
+#notifications_container {
+	display: block;
+
+	@media only screen and (max-width: 767px) {
+		display: none;
+	}
+}
+
+img.large {
+	display: block;
+
+	@media only screen and (max-width: 767px) {
+		display: none;
+	}
+}
+img.small {
+	display: none;
+
+	@media only screen and (max-width: 767px) {
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+// End mobile stuff
+
 #navigation {
 	nav {
 		margin: 0 auto 30px;
@@ -75,6 +119,10 @@
 					background-color: #205081;
 					background-image: url('/images/icons/bitbucket-32.png');
 				}
+				&.campaignmonitor {
+					background-color: #19A9E5;
+					background-image: url('/images/icons/campaignmonitor-32.png');
+				}
 				&.disqus {
 					background-color: #2E9FFF;
 					background-image: url('/images/icons/disqus-32.png');
@@ -143,6 +191,10 @@
 					background-color: #1F5196;
 					background-image: url('/images/icons/stackexchange-32.png');
 				}
+				&.stripe {
+					background-color: #008cdd;
+					background-image: url('/images/icons/stripe-32.png');
+				}
 				&.twitter {
 					background-color: #39A9E0;
 					background-image: url('/images/icons/twitter-32.png');
@@ -162,6 +214,9 @@
 					}
 					&.bitbucket {
 						background-image: url('/images/icons/bitbucket-64.png');
+					}
+					&.campaignmonitor {
+						background-image: url('/images/icons/campaignmonitor-64.png');
 					}
 					&.disqus {
 						background-image: url('/images/icons/disqus-64.png');
@@ -213,6 +268,9 @@
 					}
 					&.stackexchange {
 						background-image: url('/images/icons/stackexchange-64.png');
+					}
+					&.stripe {
+						background-image: url('/images/icons/stripe-64.png');
 					}
 					&.twitter {
 						background-image: url('/images/icons/twitter-64.png');
@@ -286,12 +344,16 @@ form {
 		}
 	}
 
-	&#subFormTwo {
-		margin: 50px 0 80px;
+	@media only screen and (max-width: 767px) {
+		margin: 50px 0px 0px !important;
 	}
 
-	@media only screen and (max-width: 767px) {
-		margin-bottom: 50px;
+	&#subFormTwo {
+		margin: 50px 0 80px;
+
+		@media only screen and (max-width: 767px) {
+			margin: 50px 0px 60px !important;
+		}
 	}
 }
 

@@ -121,7 +121,7 @@ $(document).ready(function(){
 		 	}
 		});
 
-		millisecondsOptions = [3400, 3000, 2500, 3200, 2800, 2600, 3500];
+		millisecondsOptions = [3400, 3000, 3700, 3200, 3800, 3600, 4000, 3900];
 		randomMilliseconds = millisecondsOptions[Math.floor(Math.random() * millisecondsOptions.length)];
 
 		setTimeout(cycleNotifications, randomMilliseconds);
