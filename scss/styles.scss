@@ -331,6 +331,13 @@ form {
 	margin: 30px 0 30px;
 	text-align: center;
 
+	.nudge {
+		font-size: 13px;
+		font-family: 'proxima-nova', HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #babfc7;
+		margin-top: 10px;
+	}
+
 	input {
 		display: inline !important;
 
