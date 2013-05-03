@@ -84,7 +84,7 @@ $(document).ready(function(){
 			opacity: 1
 		},
 		{
-			duration: 500,
+			duration: 750,
 			easing: 'easeOutCirc'
 		}).on('click', 'a', notificationLinkClicked);
 	}
@@ -92,6 +92,9 @@ $(document).ready(function(){
 	cycleNotifications = function(){
 		$notifications = $('.notification', $notifications_container);
 		numNotifications = $notifications.length;
+
+		// Add new notification to the top
+		addNotification();
 
 		// Start fading out last notification
 		$notifications.last().animate({
@@ -115,9 +118,6 @@ $(document).ready(function(){
 
 		 		// Remove last notification and unbind click event
 		 		$notifications.last().off('click', 'a', notificationLinkClicked).remove();
-
-				// Add new notification to the top
-				addNotification();
 		 	}
 		});
 
