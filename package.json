@@ -7,7 +7,7 @@
     "hookfeed.com",
     "www.hookfeed.com"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "express": "3.x",
