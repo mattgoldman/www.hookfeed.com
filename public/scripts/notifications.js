@@ -1,4 +1,35 @@
-notificationLinkClicked = function(event){
+$(document).ready(function(){
+  /* Notifications */
+  $notifications_container = $('#notifications', '.pages_home');
+
+  setInterval(function(){
+    names = ["Matt G.", "Michael S.", "Joelle S.", "Jessica S.", "Andy G.", "Michelle G.", "Drew K.", "Ben S.", "Sarah G.", "Fred S.", "Laura S.", "Nancy G.", "Jerry G.", "Mary L.", "David B.", "Pedro R."]
+    numNames = names.length
+    randomName = names[Math.floor(Math.random()*numNames)]
+    random = Math.floor(Math.random()*4);
+    if(random == 0){
+      html = '<div style="margin-top:-80px" class="notification charge">Received a <a href="#">payment</a> from <a href="#">'+randomName+'</a><span>'+chance.dollar({max: 250})+'</span></div>';
+    }else if(random == 1){
+      html = '<div style="margin-top:-80px" class="notification refund">Refunded <a href="#">'+randomName+'</a> partially for <a href="#">ch_'+chance.hash({length:7})+'</a><span>-'+chance.dollar({max: 30})+'</span></div>';
+    }else if(random == 2){
+      html = '<div style="margin-top:-80px" class="notification transfer">Transfered money to account <a href="#">*'+  chance.string({length: 4, pool: '1234567890'})+'</a><span>'+chance.dollar({max: 999})+'</span></div>';
+    }else if(random >=3){
+      html = '<div style="margin-top:-80px" class="notification failed_charge">Failed to collect a <a href="#">payment</a> from <a href="#">'+randomName+'</a><span>'+chance.dollar({max: 250})+'</span></div>';
+    }
+    $notifications_container.prepend(html);
+    $(".notification", '.pages_home').first().animate({"margin-top": 0}, 600, function(){
+      $(".notification", '.pages_home').last().remove();
+    });
+  }, 3000);
+
+  $notifications_container.on("click", "a", function(){
+    alert("Sorry - this is just a demo! In the real app you can dig deeper into these links...");
+    return false;
+  });
+});
+
+
+/*notificationLinkClicked = function(event){
 	event.stopPropagation();
 
 	alert('We get it, you think this is awesome. But it\'s just a teaser page. If you want the real deal, reserve your spot below.');
@@ -59,15 +90,6 @@ $(document).ready(function(){
 	$('.notification').on('click', 'a', notificationLinkClicked);
 
 	nextNotification = function(){
-		/*if(currentUseCase == 'startups'){
-			$queued_notifications = $queued_startup_notifications;
-		}else if(currentUseCase == 'developers'){
-			$queued_notifications = $queued_developer_notifications;
-		}else if(currentUseCase == 'marketers'){
-			$queued_notifications = $queued_marketer_notifications;
-		}else if(currentUseCase == 'freelancers'){
-			$queued_notifications = $queued_freelancer_notifications;
-		}*/
 		$queued_notifications = $('.queued_notification');
 
 		html = "<div class=\"notification\" style=\"opacity: 0\">";
@@ -128,4 +150,4 @@ $(document).ready(function(){
 	}
 
 	setTimeout(cycleNotifications, 2500);
-});
+});*/

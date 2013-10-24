@@ -1,537 +1,204 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-  <title>HookFeed - A Streaming News Feed for Your Company</title>
+  <meta charset="utf-8">
+  <title>HookFeed - A Streaming News Feed for Your Stripe Accounts</title>
 
-	<!-- Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="HookFeed brings all of your notifications into one simple stream. Notifications and team sharing make it even more awesome.">
+  <!-- Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="HookFeed brings all of your Stripe notifications into one simple stream - and routes important events to the right people on your team.">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="/styles/styles.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/styles.css">
 
-	<script src="/scripts/jquery.js"></script>
-	<script src="/scripts/jquery-easing.js"></script>
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/jquery-easing.js"></script>
   <script src="/scripts/form_validation.js"></script>
+  <script src="/scripts/chance.js"></script>
   <script src="/scripts/notifications.js"></script>
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-	<!-- TypeKit -->
+  <!-- TypeKit -->
   <script type="text/javascript" src="//use.typekit.net/qee5bpm.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-  <!-- Segment.io -->
-  <script type="text/javascript">
-	  var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
-	  analytics.load("pk12xajikt");
-
-	  $(document).ready(function(){
-		  var topForm = $('#subForm');
-		  var bottomForm = $('#subFormTwo');
-
-			analytics.trackForm(topForm, 'Requested Beta Access', {
-				betaFormLocation: 'top'
-			});
-			analytics.trackForm(bottomForm, 'Requested Beta Access', {
-				betaFormLocation: 'bottom'
-			});
-	  });
-	</script>
 </head>
-<body id="home">
-
-	<div class="container">
-
-		<header class="sixteen columns">
-			<h1 id="logo"><img src="/images/logo@2x.png" alt="HookFeed" width="107" height="24"></h1>
-		</header>
-
-		<!--<div id="navigation" class="sixteen columns">
-			<nav>
-				<span>Use Cases:</span>
-				<a href="#" class="selected">Startups</a>
-				<a href="#">Developers</a>
-				<a href="#">Marketers</a>
-				<a href="#">Freelancers</a>
-			</nav>
-		</div>-->
-
-		<h2 id="tagline">A News Feed for You<br>and Your Company</h2>
-    <h2 id="main_tagline">A News Feed for Your Company</h2>
-
-		<div id="notifications_container" class="row">
-			<div id="notifications">
-				<div class="notification" style="top: 0px;">
-					<div class="icon dribbble"></div>
-					<div class="source">Dribbble<span class="timestamp">26 seconds ago</span></div>
-
-					<div class="text"><a href="#">Coleman T.</a> liked your <a href="#">UI Elements</a> shot</div>
-				</div>
-
-				<div class="notification" style="top: 108px;">
-					<div class="icon stripe"></div>
-					<div class="source">Stripe<span class="timestamp">1 minute ago</span></div>
-
-					<div class="text"><a href="#">Laura S.</a> upgraded to the Pro Plan</div>
-				</div>
-
-				<div class="notification" style="top: 216px;">
-					<div class="icon github"></div>
-					<div class="source">GitHub<span class="timestamp">2 minutes ago</span></div>
-
-					<div class="text"><a href="#">Charlie K.</a> wants to merge 6 commits into <a href="#">Minimalytics</a></div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<form action="http://email.demandloyalty.com/t/r/s/jdwdyi/" method="post" id="subForm" class="sixteen columns">
-				<input type="text" name="cm-jdwdyi-jdwdyi" id="jdwdyi-jdwdyi" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
-				<div class="nudge">Over 1,000 other people already have :-)</div>
-			</form>
-		</div>
-
-			<div class="row benefit" id="benefits">
-				<div class="seven columns">
-					<img src="/images/01_Graphic_Icons@2x.gif" width="316" height="200" class="large scale-with-grid">
-				</div>
-				<div class="nine columns">
-					<img src="/images/01_Graphic_Icons@2x.gif" width="316" height="200" class="small scale-with-grid">
-					<h2>Your Notifications &mdash; From Any Source.</h2>
-					<p>Through our integration with <a href="http://zapier.com">Zapier</a>, you're able to receive notifications from  nearly 200 web services. Plus, we've got a killer REST API &mdash; so you can integrate your own awesome stuff.</p>
-				</div>
-			</div>
-
-			<div class="row benefit">
-				<div class="nine columns">
-					<img src="/images/02_Graphic_Multi-Feed@2x.gif" width="316" height="200" class="small scale-with-grid">
-					<h2>A Feed for You &mdash; A Feed for Them.</h2>
-					<p>You don't care about Sue's accounting notifications. And she doesn't care about your downtime notifications from NewRelic. So we've built HookFeed to show only the notifications to which you subscribe &mdash; and nothing more.</p>
-				</div>
-				<div class="seven columns">
-					<img src="/images/02_Graphic_Multi-Feed@2x.gif" width="316" height="200" class="large scale-with-grid">
-				</div>
-			</div>
-
-			<div class="row benefit">
-				<div class="seven columns">
-					<img src="/images/03_Graphic_Digest@2x.gif" width="316" height="200" class="large scale-with-grid">
-				</div>
-				<div class="nine columns">
-					<img src="/images/03_Graphic_Digest@2x.gif" width="316" height="200" class="small scale-with-grid">
-					<h2>Digests &mdash; Simple.</h2>
-					<p>Sometimes, it can be challenging to digest every digital bit thrown your way &mdash; so we've built in daily and weekly digests to lighten the load...and help you digest what's going on with your team.</p>
-				</div>
-			</div>
-
-			<div class="row benefit" id="last_benefit">
-				<div class="nine columns">
-					<img src="/images/04_Graphic_Alert@2x.gif" width="316" height="200" class="small scale-with-grid">
-					<h2>Alerts &mdash; for the Important Stuff.</h2>
-					<p>Dang! The website is down and traffic is spiking. Someone should let Milton in Server Ops know about this! What's that? HookFeed already did? SMS and email alerts, delivered instantly to you, only when important things happen.</p>
-				</div>
-				<div class="seven columns">
-					<img src="/images/04_Graphic_Alert@2x.gif" width="316" height="200" class="large scale-with-grid">
-				</div>
-			</div>
-
-		<div class="row">
-			<form action="http://email.demandloyalty.com/t/r/s/jdwdyi/" method="post" id="subFormTwo" class="sixteen columns">
-				<input type="text" name="cm-jdwdyi-jdwdyi" id="jdwdyi-jdwdyi" placeholder="Email Address" /><input type="submit" value="Reserve Your Spot" />
-				<div class="nudge">Over 1,000 other people already have :-)</div>
-			</form>
-		</div>
 
-			<footer class="row">
-				<div class="twelve columns offset-by-two">
-					<p>Built by <a href="http://www.smallhq.com">Small HQ</a>. Design by <a href="http://colemantharp.me">Coleman Tharp</a>.</p>
-				</div>
-			</footer>
+<body id="page_layout" class="pages_home">
+  <div id="home-header-banner"></div>
+  <div id="header-bar-banner"></div>
+  <div id="form-banner"></div>
+
+  <div class="container">
+
+    <div id="header-bar" class="sixteen columns">
+  <div id="logo">
+    <a href="/"><img src="https://s3.amazonaws.com/HookFeed/hookfeed_logo.png" width="107" height="24"></a>
+  </div>
+  <nav>
+
+  </nav>
+</div>
+
+    <div id="content" class="sixteen columns">
+      <div id="home-header" class="sixteen columns alpha omega">
+  <div id="headlines" class="seven columns alpha">
+    <h1>Your business relies on Stripe</h1>
+    <h2>It's about time you knew what was happening in your account.</h2>
+  </div>
+  <div class="nine columns omega">
+    <div id="notifications">
+
+      <div class="notification charge">
+        Received a <a href="#">payment</a> from <a href="#">Matt G.</a>
+        <span>$19.99</span>
+      </div>
+
+      <div class="notification refund">
+        Refunded <a href="#">Joelle S.</a> partially for <a href="#">ch_5u3k96j</a>
+        <span>-$7.50</span>
+      </div>
+
+      <div class="notification transfer">
+        Transfered money to account <a href="#">*4399</a>
+        <span>$1,987.23</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sixteen columns alpha omega" id="signup_form">
+  <h2 style="margin-top:32px;">Sign up for early access to our beta:</h2>
+  <form action="http://email.demandloyalty.com/t/r/s/tylujrr/" method="post" id="subForm" class="sixteen columns" style="text-align: center;
+padding-top: 26px;">
+        <input type="text" name="cm-tylujrr-tylujrr" id="cm-tylujrr-tylujrr" placeholder="Email Address" style="border: none;
+padding: 12px 10px;
+font-family: proxima-nova;
+font-size: 15px;
+border-radius: 2px;
+margin-top: 0px;
+margin-bottom: 10px;width: 350px;
+margin-right: 20px;
+vertical-align: top;" /><input type="submit" value="Reserve Your Spot" style="border: none;
+color: #F7F7F7;
+font-family: proxima-nova;
+font-size: 22px;
+font-weight: normal;
+padding: 0px 30px;
+background-color: #54BD9C;
+border-radius: 2px;
+cursor: pointer;
+width: 300px;
+margin: 0;height: 42px;
+vertical-align: top;" />
+      </form>
+</div>
+<div class="clear"></div>
+
+<div id="benefits" class="sixteen columns alpha omega">
+  <div class="three columns alpha">
+    <h2>Included:</h2>
+    <div class="benefit-container">
+      <div class="benefit" style="background-color: #5799d6;">
+        <span class="benefit_description">Web Feed</span>
+        <span class="benefit_icon">l</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="twelve columns omega offset-by-one">
+    <h2>Coming Soon:</h2>
+    <div class="benefit-container">
+      <div class="benefit" style="background-color: #9BA2AC;">
+        <span class="benefit_description">RSS Feed</span>
+        <span class="benefit_icon">f</span>
+      </div>
+      <div class="benefit" style="background-color: #9BA2AC;">
+        <span class="benefit_description">Alerts</span>
+        <span class="benefit_icon">!</span>
+      </div>
+      <div class="benefit" style="background-color: #9BA2AC;">
+        <span class="benefit_description">Digests</span>
+        <span class="benefit_icon">M</span>
+      </div>
+      <div class="benefit" style="background-color: #9BA2AC;">
+        <span class="benefit_description">Teammates</span>
+        <span class="benefit_icon">U</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="home-faq seven columns alpha">
+  <dl>
+    <dt>When will I be charged?</dt>
+    <dd>You won't be charged until 7 days after you sign up. You can cancel anytime before then and we won't charge your card. It's completely risk-free to try it out!</dd>
+
+    <dt>So you just show me a list of what's happened?</dt>
+    <dd>Far from it. We show you only the events you're interested in, and we pull in all the relevant data you'll need.</dd>
+
+    <dt>Are there any delays?</dt>
+    <dd>No way. All Stripe events appear in your feed immediately after they occur.</dd>
+
+    <dt>Do I need to know how to code?</dt>
+    <dd>Nope! All you have to do is click one button to connect to Stripe and voila - your events come streaming in!</dd>
+  </dl>
+</div>
+
+<div class="home-faq seven columns omega offset-by-one">
+  <dl>
+    <dt>What will appear in my feed?</dt>
+    <dd>Currently you'll see events related to <i>Subscriptions, Charges,</i> and <i>Bank Transfers</i>. But soon you'll be able to see all of <a href="https://stripe.com/docs/api#event_types" target="_blank">Stripe's events</a> in your feed.</dd>
+
+    <dt>Can I choose what's in my feed?</dt>
+    <dd>You'll be able to soon! Most people don't need a raging firehose. Subscribe to receive just the events you need.</dd>
+
+    <dt>Can I invite my teammates?</dt>
+    <dd>We're working on it! Soon, you'll be able to send different events to relevant people in your company. Alerts for important events, digests for the non-critical stuff.</dd>
+
+    <dt>I have more questions, who do I ask?</dt>
+    <dd><a href="mailto:4u2j3p53@incoming.intercom.io">Email us</a> and let us know what's on your mind. We'll do our best to get back to you as quickly as possible.</dd>
+  </dl>
+</div>
+    </div><!-- END #content -->
+
+    <div class="sixteen columns" id="footer">
+      <footer class="inner">
+        <div class="built_by">
+          <p><span>Built by</span> <a href="http://www.smallhq.com">Small HQ</a>. |
+          <a href="http://www.madeinsd.org">Made in SD</a></p>
+        </div>
+        <div class="legal">
+          <p></p>
+        </div>
+      </footer>
+    </div>
+
+  </div> <!-- END .container -->
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40298732-1']);
+      _gaq.push(['_setDomainName', 'hookfeed.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!-- END Google Analytics -->
+
+    <style>#page_layout.pages_home #form-banner {
+      height: 160px !important;
+      }
+      #signup_form {
+        height: 160px !important;
+}  </style>
 
-	</div><!-- .container -->
-
-
-
-
-
-
-
-	<div class="queued_notification startups">
-		<div class="icon stripe"></div>
-		<div class="source">Stripe<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Will S.</a> downgraded to the Solo Plan</div>
-	</div>
-
-	<div class="queued_notification startups">
-		<div class="icon stripe"></div>
-		<div class="source">Stripe<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Jane F.</a> cancelled her account</div>
-	</div>
-
-	<div class="queued_notification startups">
-		<div class="icon stripe"></div>
-		<div class="source">Stripe<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Steve L.</a> upgraded to the Team Plan</div>
-	</div>
-
-	<div class="queued_notification startups">
-		<div class="icon stripe"></div>
-		<div class="source">Stripe<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Gary G.</a> has an expired credit card</div>
-	</div>
-
-	<div class="queued_notification startups">
-		<div class="icon stripe"></div>
-		<div class="source">Stripe<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Jeff C.</a> switched from monthly to annual billing</div>
-	</div>
-
-	<div class="queued_notification startups marketers">
-		<div class="icon campaignmonitor"></div>
-		<div class="source">Campaign Monitor<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Jeff C.</a> subscribed to <a href="#">HookFeed Pre-Launch</a></div>
-	</div>
-
-	<div class="queued_notification startups marketers">
-		<div class="icon campaignmonitor"></div>
-		<div class="source">Campaign Monitor<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Drew W.</a> subscribed to <a href="#">Minimalytics Pre-Launch</a></div>
-	</div>
-
-	<div class="queued_notification startups marketers">
-		<div class="icon campaignmonitor"></div>
-		<div class="source">Campaign Monitor<span class="timestamp">1 minute ago</span></div>
-
-		<div class="text"><a href="#">Matt K.</a> subscribed to the <a href="#">Small HQ Newsletter</a></div>
-	</div>
-
-	<div class="queued_notification marketers">
-		<div class="icon disqus"></div>
-		<div class="source">Disqus<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt G.</a> replied to <a href="#">your comment</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon dropbox"></div>
-		<div class="source">Dropbox<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> shared <a href="#">a folder</a> with you</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon evernote"></div>
-		<div class="source">Evernote<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> updated <a href="#">Post Ideas</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon facebook"></div>
-		<div class="source">Facebook<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Mark Z.</a> liked your page</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon facebook"></div>
-		<div class="source">Facebook<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Charlie K.</a> sent you a message</div>
-	</div>
-
-	<div class="queued_notification developers startups">
-		<div class="icon github"></div>
-		<div class="source">GitHub<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">DHH</a> just made 3 commits to <a href="#">Rails</a></div>
-	</div>
-
-	<div class="queued_notification developers startups">
-		<div class="icon github"></div>
-		<div class="source">GitHub<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Nancy G.</a> just starred <a href="#">HookFeed</a></div>
-	</div>
-
-	<div class="queued_notification developers startups">
-		<div class="icon github"></div>
-		<div class="source">GitHub<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> commented on Issue <a href="#">#753</a></div>
-	</div>
-
-	<div class="queued_notification developers startups">
-		<div class="icon github"></div>
-		<div class="source">GitHub<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Drew K.</a> commented on Issue <a href="#">#21</a></div>
-	</div>
-
-	<div class="queued_notification developers startups">
-		<div class="icon github"></div>
-		<div class="source">GitHub<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt G.</a> commented on Pull Request <a href="#">#4</a></div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Minimalytics</a> is now running on 2 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Minimalytics</a> is now running on 3 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Minimalytics</a> is now running on 4 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">HookFeed</a> is now running on 2 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">HookFeed</a> is now running on 3 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">HookFeed</a> is now running on 4 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Small HQ</a> is now running on 3 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Small HQ</a> is now running on 4 dynos</div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon heroku"></div>
-		<div class="source">Heroku<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Small HQ</a> is now running on 2 dynos</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon kickstarter"></div>
-		<div class="source">KickStarter<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Frank</a> just funded <a href="#">Twine</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon klout"></div>
-		<div class="source">Klout<span class="timestamp">just now</span></div>
-
-		<div class="text">Your Klout score just hit 46</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon klout"></div>
-		<div class="source">Klout<span class="timestamp">just now</span></div>
-
-		<div class="text">Your Klout score has plummeted to 7</div>
-	</div>
-
-	<div class="queued_notification designers freelancers">
-		<div class="icon layervault"></div>
-		<div class="source">LayerVault<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Coleman T.</a> posted feedback on <a href="#">Wireframe.ai</a></div>
-	</div>
-
-	<div class="queued_notification designers freelancers">
-		<div class="icon layervault"></div>
-		<div class="source">LayerVault<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Jerry G.</a> posted feedback on <a href="#">iPhone.psd</a></div>
-	</div>
-
-	<div class="queued_notification designers freelancers">
-		<div class="icon layervault"></div>
-		<div class="source">LayerVault<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Michelle G.</a> updated <a href="#">HookFeed.psd</a></div>
-	</div>
-
-	<div class="queued_notification designers freelancers">
-		<div class="icon layervault"></div>
-		<div class="source">LayerVault<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Fred S.</a> updated <a href="#">SmallHQ.psd</a></div>
-	</div>
-
-	<div class="queued_notification designers freelancers">
-		<div class="icon layervault"></div>
-		<div class="source">LayerVault<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Charlie K.</a> updated <a href="#">Minimalytics.psd</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon linkedin"></div>
-		<div class="source">LinkedIn<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt L.</a> sent you a <a href="#">message</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon linkedin"></div>
-		<div class="source">LinkedIn<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> viewed your <a href="#">profile</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon linkedin"></div>
-		<div class="source">LinkedIn<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Dennis</a> wants to connect with you</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon linkedin"></div>
-		<div class="source">LinkedIn<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Mac</a> wants to connect with you</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon quora"></div>
-		<div class="source">Quora<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Coleman T.</a> replied to your <a href="#">question</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon quora"></div>
-		<div class="source">Quora<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Jerry G.</a> replied to your <a href="#">answer</a></div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon skype"></div>
-		<div class="source">Skype<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Jon G.</a> added you</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon skype"></div>
-		<div class="source">Skype<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Gregory C.</a> added you</div>
-	</div>
-
-	<div class="queued_notification marketers">
-		<div class="icon slideshare"></div>
-		<div class="source">SlideShare<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt G.</a> followed you</div>
-	</div>
-
-	<div class="queued_notification marketers">
-		<div class="icon slideshare"></div>
-		<div class="source">SlideShare<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> followed you</div>
-	</div>
-
-	<div class="queued_notification freelancers">
-		<div class="icon spotify"></div>
-		<div class="source">Spotify<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> sent you <a href="#">a song</a></div>
-	</div>
-
-	<div class="queued_notification developers">
-		<div class="icon stackexchange"></div>
-		<div class="source">StackExchange<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt G.</a> replied to <a href="#">your question</a></div>
-	</div>
-
-	<div class="queued_notification startups freelancers marketers">
-		<div class="icon twitter"></div>
-		<div class="source">Twitter<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt G.</a> followed you</div>
-	</div>
-
-	<div class="queued_notification startups freelancers marketers">
-		<div class="icon twitter"></div>
-		<div class="source">Twitter<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Joelle S.</a> favorited <a href="#">your tweet</a></div>
-	</div>
-
-	<div class="queued_notification startups freelancers marketers">
-		<div class="icon twitter"></div>
-		<div class="source">Twitter<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Coleman T.</a> added you to <a href="#">MicroConf</a></div>
-	</div>
-
-	<div class="queued_notification startups freelancers marketers">
-		<div class="icon twitter"></div>
-		<div class="source">Twitter<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Drew W.</a> retweeted <a href="#">your tweet</a></div>
-	</div>
-
-	<div class="queued_notification marketers freelancers">
-		<div class="icon vimeo"></div>
-		<div class="source">Vimeo<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Charlie K.</a> followed you</div>
-	</div>
-
-	<div class="queued_notification marketers">
-		<div class="icon youtube"></div>
-		<div class="source">YouTube<span class="timestamp">just now</span></div>
-
-		<div class="text"><a href="#">Matt G.</a> followed you</div>
-	</div>
 </body>
 </html>
